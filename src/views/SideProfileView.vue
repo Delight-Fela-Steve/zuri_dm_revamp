@@ -9,12 +9,12 @@
         <MessageInput />
       </div>
       <div class="profile-container">
-    <div class="side-profile">
-        <ProfileContainer />
+        <div class="side-profile">
+          <ProfileContainer />
+        </div>
       </div>
-  </div>
     </div>
-  
+
     <!-- <div class="message-thread">
       <DmMessageThread1 />
     </div>
@@ -29,10 +29,10 @@
 
 <script>
 // @ is an alias to /src
-import ThreadCalender from "@/components/threadCalender.vue";
+import ThreadCalender from "@/components/threadCalendar.vue";
 import ScheduleMessageModal from "@/components/scheduleMessageModal.vue";
 import ThreadReplySidebar from "@/components/threadReplySidebar.vue";
-import MessageInput from "../components/Messageinput.vue";
+import MessageInput from "@/components/Messageinput.vue";
 import SearchBar from "@/components/searchBar.vue";
 import InputBox from "@/components/inputBox.vue";
 import DmThreadActions from "@/components/dmThreadActions.vue";
@@ -62,7 +62,7 @@ export default {
 </script>
 <style scoped>
 .home {
- display: flex;
+  display: flex;
   flex-direction: row;
   flex-basis: 0;
 }
@@ -70,7 +70,6 @@ export default {
 .container {
   display: grid;
   grid-template-columns: 1fr repeat(4, 1fr);
-  
 }
 
 .body {
