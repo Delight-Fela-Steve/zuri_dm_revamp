@@ -18,7 +18,10 @@
                     </p>
                 </div>
             </b-col>
-            <b-col cols="9" class="zurichat-contents-plugin main px-4">
+            <b-col
+                cols="9"
+                class="zurichat-contents-plugin main px-4 position-relative"
+            >
                 <header>
                     <div class="searchform-settings-profile py-3">
                         <SearchBar />

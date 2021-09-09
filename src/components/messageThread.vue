@@ -1,103 +1,31 @@
 <template>
     <div class="message-thread mt-4">
-        <div class="msgBody">
+        <div
+            @mouseover="hover = true"
+            @mouseleave="hover = false"
+            class="msgBody position-relative"
+        >
             <div class="conversation-threads d-flex flex-row">
                 <div class="userProfile-avatar">
                     <img src="../assets/Ellipse 21.png" alt="User Image" />
                 </div>
-                <div class="usertext-messages">
+                <div class="usertext-messages position-relative">
                     <h5 class="pb-2">
                         <span class="userName">MamaGee</span>
                         <span class="msgTime">5.55pm</span>
                     </h5>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum mollitia aspernatur laboriosam cum officiis
-                        commodi deleniti odit rerum ratione consectetur. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit.
-                        Tincidunt adipiscing et, tortor, fusce quis tellus,
-                        enim. A, posuere mi auctor odio tincidunt magnis.
-                    </p>
-                </div>
-            </div>
-
-            <div class="conversation-threads d-flex flex-row">
-                <div class="userProfile-avatar">
-                    <img src="../assets/Ellipse 24.png" alt="User Image" />
-                </div>
-                <div class="usertext-messages">
-                    <h5 class="pb-2">
-                        <span class="userName">Geegee</span>
-                        <span class="msgTime">5.57pm</span>
-                    </h5>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum mollitia aspernatur laboriosam cum officiis
-                        commodi deleniti odit rerum ratione consectetur. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit.
-                        Tincidunt adipiscing et, tortor, fusce quis tellus,
-                        enim. A, posuere mi auctor odio tincidunt magnis.
-                    </p>
-                </div>
-            </div>
-
-            <div class="conversation-threads d-flex flex-row">
-                <div class="userProfile-avatar">
-                    <img src="../assets/Ellipse 21.png" alt="User Image" />
-                </div>
-                <div class="usertext-messages">
-                    <h5 class="pb-2">
-                        <span class="userName">MamaGee</span>
-                        <span class="msgTime">6.05pm</span>
-                    </h5>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum mollitia aspernatur laboriosam cum officiis
-                        commodi deleniti odit rerum ratione consectetur. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit.
-                        Tincidunt adipiscing et, tortor, fusce quis tellus,
-                        enim. A, posuere mi auctor odio tincidunt magnis.
-                    </p>
-                </div>
-            </div>
-
-            <div class="conversation-threads d-flex flex-row">
-                <div class="userProfile-avatar">
-                    <img src="../assets/Ellipse 21.png" alt="User Image" />
-                </div>
-                <div class="usertext-messages">
-                    <h5 class="pb-2">
-                        <span class="userName">MamaGee</span>
-                        <span class="msgTime">5.55pm</span>
-                    </h5>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum mollitia aspernatur laboriosam cum officiis
-                        commodi deleniti odit rerum ratione consectetur. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit.
-                        Tincidunt adipiscing et, tortor, fusce quis tellus,
-                        enim. A, posuere mi auctor odio tincidunt magnis.
-                    </p>
-                </div>
-            </div>
-
-            <div class="conversation-threads d-flex flex-row">
-                <div class="userProfile-avatar">
-                    <img src="../assets/Ellipse 24.png" alt="User Image" />
-                </div>
-                <div class="usertext-messages">
-                    <h5 class="pb-2">
-                        <span class="userName">GeeGee</span>
-                        <span class="msgTime">5.57pm</span>
-                    </h5>
-                    <p class="text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum mollitia aspernatur laboriosam cum officiis
-                        commodi deleniti odit rerum ratione consectetur. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit.
-                        Tincidunt adipiscing et, tortor, fusce quis tellus,
-                        enim. A, posuere mi auctor odio tincidunt magnis.
-                    </p>
+                    <div class="text-container">
+                        <messageHoverShow v-if="hover" />
+                        <p class="text">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                            elit. Eum mollitia aspernatur laboriosam cum
+                            officiis commodi deleniti odit rerum ratione
+                            consectetur. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Tincidunt adipiscing et, tortor,
+                            fusce quis tellus, enim. A, posuere mi auctor odio
+                            tincidunt magnis.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,8 +33,17 @@
 </template>
 
 <script>
+import messageHoverShow from '../components/dmThreadHoverState.vue';
 export default {
     name: 'DmMesssageThread',
+    components: {
+        messageHoverShow,
+    },
+    data() {
+        return {
+            hover: false,
+        };
+    },
 };
 </script>
 
@@ -143,5 +80,13 @@ export default {
 
 .usertext-messages p {
     margin-bottom: 0;
+}
+
+.text-container {
+    position: relative;
+}
+
+.text-container:hover {
+    background: #f6f6f6;
 }
 </style>

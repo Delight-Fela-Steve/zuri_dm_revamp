@@ -28,7 +28,14 @@ export default {
 
 <style scoped>
 .dm-profile-header {
+    position: relative;
     background: #fff;
+}
+
+.profile-avatar {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
 }
 
 .profile-avatar h6 {

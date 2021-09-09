@@ -5,7 +5,6 @@
                 <b-form-input
                     class="searchbox"
                     size="sm"
-                    v-model="text"
                     placeholder="Search here"
                 ></b-form-input>
                 <b-icon

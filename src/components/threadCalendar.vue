@@ -13,13 +13,13 @@
             </b-button>
         </div>
         <div
-            class="row p-0 border border-gray-200 rounded days-dropdown list-wrapper"
+            class="row p-0 border border-gray-200 rounded days-dropdown list-wrapper pt-3"
             v-if="show"
         >
             <ul ps-0 p0 m-0>
-                <span class="px-3">jump to...</span>
+                <span class="px-4 mt-2">Jump to...</span>
                 <li
-                    class="my-2 px-3 btn-outline-primary"
+                    class="my-2 px-4 btn-outline-primary"
                     v-for="day in days"
                     :key="day.id"
                 >
@@ -40,10 +40,9 @@ export default {
             message: 'Monday, August 23rd',
             show: false,
             days: [
-                { id: 0, day: 'Today' },
+                { id: 0, day: 'Most recent' },
                 { id: 1, day: 'Last week' },
                 { id: 2, day: 'Last month' },
-                { id: 3, day: 'The very beginning' },
             ],
         };
     },
@@ -111,6 +110,7 @@ span {
     left: 6.5%;
     width: 275px;
     background: #ffffff;
+    z-index: 99;
 }
 
 ul {
@@ -120,5 +120,10 @@ ul {
 
 li {
     color: black;
+}
+
+li:hover {
+    background: #1344b7;
+    color: #ffffff;
 }
 </style>
