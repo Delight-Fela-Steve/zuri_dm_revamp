@@ -59,12 +59,12 @@ export default {
                     online: false,
                 },
                 {
-                    username: 'Dre_Osibote',
+                    username: 'Der_Osibote',
                     avatar: 'Ellipse 21.png',
                     online: true,
                 },
                 {
-                    username: 'Ellah',
+                    username: 'Ellarh',
                     avatar: 'Ellipse 24.png',
                     online: false,
                 },
