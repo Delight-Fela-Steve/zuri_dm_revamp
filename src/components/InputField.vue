@@ -1,13 +1,14 @@
 <template>
     <div class="border rounded position-sticky input-form-field">
-        <b-input-group class="text-input">
-            <b-form-input
-                placeholder="Send Message to"
-                class="py-2"
-                v-model="sendMsg"
-                style="border: none;"
-            ></b-form-input>
-        </b-input-group>
+        <b-form-textarea
+            id="textarea-no-resize"
+            placeholder="Send message to "
+            rows="1"
+            class="px-2 py-1"
+            v-model="sendMsg"
+            style="border: none; overflow-y: hidden;"
+            no-resize
+        ></b-form-textarea>
         <div
             class="emoji-group d-flex flex-row justify-space-between align-items-center"
         >

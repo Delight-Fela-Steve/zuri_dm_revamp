@@ -3,7 +3,6 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import { BootstrapVueIcons, BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import 'vue-popperjs/dist/vue-popper';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import 'bootstrap-vue/dist/bootstrap-vue';
