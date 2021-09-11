@@ -11,7 +11,7 @@
             <h1> Mama Gee </h1>
             <p> Frontend Design Mentor </p>
             <p> She/Her </p><br><br>
-            <img id="vector" alt="vector" src="../assets/vector.png">
+            <img id="vector" alt="vector" src="../assets/Emoji.png">
 
             
 
