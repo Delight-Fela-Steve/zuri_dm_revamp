@@ -33,7 +33,13 @@ const routes = [
         name: 'Profile',
         component: () => 
         import('../views/SideProfileView.vue')
-    }
+    },
+    {
+        path: '/emoji-action',
+        name: 'EmojiAction',
+        component: () => 
+        import('../views/emojiAction.vue')
+    },
 ];
 
 const router = new VueRouter({
