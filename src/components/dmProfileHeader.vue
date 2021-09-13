@@ -2,7 +2,7 @@
     <div class="dm-profile-header">
         <div class="dm-profile-header-content">
             <div
-                class="avatar-username px-4 py-2 d-flex flex-row justify-content-between align-items-center"
+                class="avatar-username p-2 d-flex flex-row justify-content-between align-items-center"
             >
                 <div class="profile-avatar d-flex flex-flow align-items-center">
                     <img src="../assets/Ellipse 21.png" alt="avatar" />
@@ -30,6 +30,7 @@ export default {
 .dm-profile-header {
     position: relative;
     background: #fff;
+    border-radius: 0.5rem;
 }
 
 .profile-avatar {

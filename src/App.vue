@@ -3,7 +3,7 @@
         <!-- <input-box/>
     <searchbar></searchbar>
     <messageThread></messageThread>
-     -->
+    -->
         <router-view />
     </div>
 </template>

@@ -40,6 +40,12 @@ const routes = [
         component: () => 
         import('../views/emojiAction.vue')
     },
+    {
+        path: '/direct-message',
+        name: 'DirectMessage',
+        component: () => 
+        import('../views/directMessage.vue')
+    }
 ];
 
 const router = new VueRouter({

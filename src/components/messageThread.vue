@@ -91,8 +91,8 @@ export default {
 }
 
 .usertext-messages {
-  font-size: 14px;
-  line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 .usertext-messages h5 {

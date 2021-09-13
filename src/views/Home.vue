@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <b-row class="all-contents">
-            <b-col cols="3" class="zurichat-sidebar">
+            <b-col cols="2" class="zurichat-sidebar">
                 <div class="hedaer-contents">
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing
@@ -17,9 +17,12 @@
                         totam nihil eius, corporis quam eligendi a! Veritatis!
                     </p>
                 </div>
+                <div class="direct-message">
+                    <DirectMessage />
+                </div>
             </b-col>
             <b-col
-                cols="9"
+                cols="10"
                 class="zurichat-contents-plugin main px-4 position-relative"
             >
                 <header>
@@ -31,7 +34,7 @@
                     <DmProfileHeader />
                 </div>
 
-                <div class="dm-plugin-contents">
+                <div class="dm-plugin-contents position-relative rounded-lg">
                     <DmPluginContents />
                 </div>
             </b-col>
@@ -44,6 +47,7 @@
 import SearchBar from '@/components/searchBar.vue';
 import DmProfileHeader from '@/components/dmProfileHeader.vue';
 import DmPluginContents from '@/components/dmPluginContents.vue';
+import DirectMessage from '@/components/directMessage.vue';
 
 export default {
     name: 'Home',
@@ -51,6 +55,7 @@ export default {
         SearchBar,
         DmProfileHeader,
         DmPluginContents,
+        DirectMessage,
     },
 };
 </script>
@@ -59,6 +64,7 @@ export default {
 .hone .all-contents {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .zurichat-sidebar {
@@ -73,10 +79,6 @@ export default {
 
 .user-profile-header {
     margin: 16px 0 26px;
-}
-
-dm-plugin-contents {
-    position: relative;
 }
 
 @media screen and (min-width: 100px) and (max-width: 767px) {
