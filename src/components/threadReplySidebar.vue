@@ -1,133 +1,133 @@
 <template>
   <div>
-    <b-sidebar id="sidebar" right no-header z-index="0" bg-variant="white">
-      <template #default="{ hide }">
-        <div
-          class="
-            header
-            d-flex
-            justify-content-between
-            align-items-center
-            rounded-top
-            py-2
-            px-3
-          "
-          style="background: #00B87C"
-        >
-          <h4 id="sidebar-title" class="sidebar-header-title">Thread</h4>
-          <p class="h3">
-            <b-icon
-              @click="hide"
-              icon="x"
-              style="color: #fff; cursor: pointer"
-            ></b-icon>
-          </p>
+    <div
+      class="
+        header
+        d-flex
+        justify-content-between
+        align-items-center
+        rounded-top
+        py-2
+        px-3
+      "
+      style="background: #00b87c"
+    >
+      <h4 id="sidebar-title" class="sidebar-header-title">Thread</h4>
+      <p class="h3">
+        <b-icon
+          @click="hide"
+          icon="x"
+          style="color: #fff; cursor: pointer"
+        ></b-icon>
+      </p>
+    </div>
+    <div class="body pt-4 px-3">
+      <div class="thread d-flex">
+        <div class="thread-creator-image">
+          <img :src="require('@/assets/woman.png')" alt="" />
         </div>
-        <div class="body pt-4 px-3">
-          <div class="thread d-flex">
-            <div class="thread-creator-image">
-              <img :src="require('@/assets/woman.png')" alt="" />
-            </div>
-            <div class="thread-details">
-              <b-list-group>
-                <b-list-group-item
-                  class="border-0 flex-column align-items-center py-0"
-                >
-                  <div class="d-flex align-items-center">
-                    <span class="name">MamaGee</span>
-                    <span class="time">6:05pm</span>
-                  </div>
-                </b-list-group-item>
-                <b-list-group-item class="border-0">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Nobis mollitia, at temporibus quam repellendus quis.
-                  </p>
-                </b-list-group-item>
-              </b-list-group>
-            </div>
-          </div>
-          <div class="date-divider">
-            <p>{{ replyCount }} replies</p>
-            <hr />
-          </div>
-          <div class="thread-replies">
-            <b-list-group>
-              <div
-                class="thread-reply d-flex mb-2"
-                v-for="(replies, i) in thread_replies"
-                :key="i"
-              >
-                <div class="thread-replier-image">
-                  <div class="thread-creator-image">
-                    <img
-                      :src="require(`@/assets/${replies.userAvatar}`)"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <b-list-group-item
-                  href="#"
-                  disabled
-                  class="flex-column align-items-start border-0 py-0"
-                >
-                  <div class="d-flex align-items-center">
-                    <span class="name">{{ replies.userName }}</span>
-                    <span class="time">{{ replies.timeStamp }}</span>
-                  </div>
-
-                  <p>
-                    {{ replies.reply }}
-                  </p>
-                </b-list-group-item>
+        <div class="thread-details">
+          <b-list-group>
+            <b-list-group-item
+              class="border-0 flex-column align-items-center py-0"
+            >
+              <div class="d-flex align-items-center">
+                <span class="name">MamaGee</span>
+                <span class="time">6:05pm</span>
               </div>
-            </b-list-group>
-          </div>
-          <div class="text-field">
-            <b-form-textarea
-              id="textarea"
-              placeholder="Reply...."
-              rows="3"
-              no-resize
-            ></b-form-textarea>
-            <div class="controls d-flex justify-content-between px-1">
-              <div class="text-formating d-flex">
-                <p><b-icon icon="lightning"></b-icon></p>
-                <span class="vr" style="width: 1.5px; opacity: 0.6"></span>
-                <p><b-icon icon="type-bold"></b-icon></p>
-                <p><b-icon icon="type-italic"></b-icon></p>
-                <p><b-icon icon="type-underline"></b-icon></p>
-              </div>
-              <div class="text-actions d-flex">
-                <p><b-icon icon="emoji-smile"></b-icon></p>
-                <p><b-icon icon="paperclip" rotate="45"></b-icon></p>
-                <p class="text-muted">
-                  <b-icon icon="cursor" rotate="45"></b-icon>
-                </p>
-                <span class="vr"></span>
-                <p class="text-muted"><b-icon icon="chevron-down"></b-icon></p>
-              </div>
-            </div>
-          </div>
-              <b-form-checkbox
-            id="checkbox"
-            name="checkbox"
-            size="sm"
-            class="pt-3 px-0"
+            </b-list-group-item>
+            <b-list-group-item class="border-0">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
+                mollitia, at temporibus quam repellendus quis.
+              </p>
+            </b-list-group-item>
+          </b-list-group>
+        </div>
+      </div>
+      <div class="date-divider">
+        <p>{{ replyCount }} replies</p>
+        <hr />
+      </div>
+      <div class="thread-replies">
+        <b-list-group>
+          <div
+            class="thread-reply d-flex mb-2"
+            v-for="(replies, i) in thread_replies"
+            :key="i"
           >
-            <label for="checkbox" class="pl-3 check-label">Also send as direct message</label>
-          </b-form-checkbox>
+            <div class="thread-replier-image">
+              <div class="thread-creator-image">
+                <img :src="require(`@/assets/${replies.userAvatar}`)" alt="" />
+              </div>
+            </div>
+            <b-list-group-item
+              href="#"
+              disabled
+              class="flex-column align-items-start border-0 py-0"
+            >
+              <div class="d-flex align-items-center">
+                <span class="name">{{ replies.userName }}</span>
+                <span class="time">{{ replies.timeStamp }}</span>
+              </div>
+
+              <p>
+                {{ replies.reply }}
+              </p>
+            </b-list-group-item>
+          </div>
+        </b-list-group>
+      </div>
+      <div class="text-field">
+        <b-form-textarea
+          id="textarea"
+          placeholder="Reply...."
+          rows="3"
+          no-resize
+        ></b-form-textarea>
+        <div class="controls d-flex justify-content-between px-1">
+          <div class="text-formating d-flex">
+            <p><b-icon icon="lightning"></b-icon></p>
+            <span class="vr" style="width: 1.5px; opacity: 0.6"></span>
+            <p><b-icon icon="type-bold"></b-icon></p>
+            <p><b-icon icon="type-italic"></b-icon></p>
+            <p><b-icon icon="type-underline"></b-icon></p>
+          </div>
+          <div class="text-actions d-flex">
+            <p><b-icon icon="emoji-smile"></b-icon></p>
+            <p><b-icon icon="paperclip" rotate="45"></b-icon></p>
+            <p class="text-muted">
+              <b-icon icon="cursor" rotate="45"></b-icon>
+            </p>
+            <span class="vr"></span>
+            <p class="text-muted"><b-icon icon="chevron-down"></b-icon></p>
+          </div>
         </div>
-      </template>
-    </b-sidebar>
+      </div>
+      <b-form-checkbox
+        id="checkbox"
+        name="checkbox"
+        size="sm"
+        class="pt-3 px-0"
+        @input="sendReply"
+        v-model="replyThread"
+      >
+        <label for="checkbox" class="pl-3 check-label"
+          >Also send as direct message</label
+        >
+      </b-form-checkbox>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
-  name: "ThreadReply",
+  name: "ThreadReplySidebar",
   data() {
     return {
+      replyThread: "",
       thread_replies: [
         {
           userName: "MamaGee",
@@ -147,19 +147,15 @@ export default {
       name: "",
     };
   },
-  methods: {},
+  methods: {
+    ...mapMutations(["setShowReply"]),
+    hide(){
+      this.setShowReply(false)
+    }
+  },
   computed: {
     replyCount() {
       return this.thread_replies.length;
-    },
-    state() {
-      return this.name.length >= 4;
-    },
-    invalidFeedback() {
-      if (this.name.length > 0) {
-        return "Enter at least 4 characters.";
-      }
-      return "Please enter something.";
     },
   },
 };
@@ -242,7 +238,7 @@ export default {
   margin: 0 5px 0 -5px;
   height: 25px;
 }
-label.check-label{
-    padding-left: 10px;
+label.check-label {
+  padding-left: 10px;
 }
 </style>

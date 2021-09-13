@@ -11,6 +11,7 @@
                 title="Add a reaction"
                 variant="danger"
                 v-b-tooltip.hover.focus
+                @click="pickEmoji"
             >
                 <b-icon icon="emoji-smile" font-scale="1.3" />
             </div>
@@ -21,6 +22,7 @@
                 tabindex="0"
                 title="Reply in thread"
                 v-b-tooltip.hover.focus
+                @click="showReply"
             >
                 <b-icon icon="chat-text" font-scale="1.3" />
             </div>
@@ -62,8 +64,23 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
     name: 'dmThreadHoverState',
+    data(){
+        return {
+        }
+    },
+    methods: {
+        ...mapMutations(["setPickEmoji", "setShowReply"]),
+        pickEmoji(){
+            this.setPickEmoji(true)
+        },
+        showReply(){
+            this.setShowReply(true)
+        }
+    },
 };
 </script>
 

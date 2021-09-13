@@ -35,6 +35,12 @@ const routes = [
         import('../views/SideProfileView.vue')
     },
     {
+        path: '/emoji-action',
+        name: 'EmojiAction',
+        component: () => 
+        import('../views/emojiAction.vue')
+    },
+    {
         path: '/direct-message',
         name: 'DirectMessage',
         component: () => 
