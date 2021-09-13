@@ -26,7 +26,7 @@
                     {{ day.day }}
                 </li>
                 <hr />
-                <li class="my-2 px-3 ">jump to a specific date</li>
+                <li class="my-2 px-3 ">Jump to a specific date</li>
             </ul>
         </div>
     </div>

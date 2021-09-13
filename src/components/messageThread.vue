@@ -7,7 +7,11 @@
         >
             <div class="conversation-threads d-flex flex-row">
                 <div class="userProfile-avatar">
-                    <img src="../assets/Ellipse 21.png" alt="User Image" />
+                    <img
+                        class="rounded-circle"
+                        src="../assets/Ellipse 21.png"
+                        alt="User Image"
+                    />
                 </div>
                 <div class="usertext-messages position-relative">
                     <h5 class="pb-2">

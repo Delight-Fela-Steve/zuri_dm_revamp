@@ -135,7 +135,7 @@ button {
     color: rgba(0, 184, 124, 1);
 }
 
-.close {
+.close.position-absolute {
     right: 2px !important;
     font-size: 25px;
     display: none;
