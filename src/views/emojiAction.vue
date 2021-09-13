@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <b-row class="all-contents">
-      <b-col cols="3" class="zurichat-sidebar">
+      <b-col cols="2" class="zurichat-sidebar">
         <div class="hedaer-contents">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati
@@ -18,7 +18,7 @@
         </div>
       </b-col>
       <b-col
-        :cols="showReply ? '6' : '9'"
+        :cols="showReply ? '6' : '10'"
         class="zurichat-contents-plugin main px-4 position-relative"
       >
         <header>
@@ -32,9 +32,10 @@
 
         <div class="dm-plugin-contents">
           <DmPluginContents />
+          <!-- <button @click="fetchUsers">fetch users</button> -->
         </div>
       </b-col>
-      <b-col :cols="showReply ? '3' : ''" v-if="showReply" >
+      <b-col :cols="showReply ? '4' : ''" v-if="showReply" >
         <ThreadReplySidebar />
       </b-col>
     </b-row>
@@ -60,11 +61,24 @@ export default {
     EmojiComp,
   },
   data() {
-    return {};
+    return {
+      users: []
+    };
   },
   computed: {
-    ...mapGetters(["pickEmoji", "showReply"]),
+    ...mapGetters(["showReply"]),
   },
+  
+  methods: {
+    async fetchUsers() {
+      const baseURI = 'http://dm.zuri.chat:9090/api/v1/room-info?room_id='
+      await this.$http.get(baseURI)
+      .then((result) => {
+        this.users = result
+      console.log(result)
+      }).catch(error => console.log(error))
+    }
+  }
 };
 </script>
 

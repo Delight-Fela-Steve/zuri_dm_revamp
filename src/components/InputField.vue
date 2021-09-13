@@ -1,5 +1,5 @@
 <template>
-    <div class="border rounded position-sticky input-form-field">
+    <div class="border rounded input-form-field">
         <b-form-textarea
             id="textarea-no-resize"
             placeholder="Send message to "
