@@ -32,7 +32,6 @@
 
         <div class="dm-plugin-contents">
           <DmPluginContents />
-          <!-- <button @click="fetchUsers">fetch users</button> -->
         </div>
       </b-col>
       <b-col :cols="showReply ? '4' : ''" v-if="showReply" >
@@ -62,23 +61,11 @@ export default {
   },
   data() {
     return {
-      users: []
     };
   },
   computed: {
     ...mapGetters(["showReply"]),
   },
-  
-  methods: {
-    async fetchUsers() {
-      const baseURI = 'http://dm.zuri.chat:9090/api/v1/room-info?room_id='
-      await this.$http.get(baseURI)
-      .then((result) => {
-        this.users = result
-      console.log(result)
-      }).catch(error => console.log(error))
-    }
-  }
 };
 </script>
 
@@ -105,9 +92,7 @@ export default {
 dm-plugin-contents {
   position: relative;
 }
-#app > div > div > div:nth-child(3) {
-  padding: 0;
-}
+
 
 @media screen and (min-width: 100px) and (max-width: 767px) {
   .all-contents .zurichat-sidebar {

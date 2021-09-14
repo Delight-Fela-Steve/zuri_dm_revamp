@@ -8,7 +8,8 @@ export default new Vuex.Store({
     pickEmoji: false,
     showReply: false,
     emojis: [],
-    emojiSet: Object.create(null)
+    emojiSet: Object.create(null),
+    thread_replies: []
   },
   mutations: {
     setPickEmoji(state, payload) {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     setEmojiSet(state, payload) {
       state.emojiSet = payload
     },
+    sendReply(state, payload){
+      state.thread_replies = payload
+    }
   },
   actions: {
     setEmojis({ commit, state }, payload) {
@@ -33,6 +37,10 @@ export default new Vuex.Store({
         [next]: (prev[next] || 0) + 1
       }), {});
       commit("setEmojiSet", map);
+    },
+    sendReply({commit, state}, payload){
+      const replies = [...state.thread_replies, payload]
+      commit("sendReply", replies)
     }
   },
   getters: {
