@@ -31,8 +31,7 @@ const routes = [
     {
         path: '/profile-view',
         name: 'Profile',
-        component: () => 
-        import('../views/SideProfileView.vue')
+        component: () => import('../views/SideProfileView.vue'),
     },
     {
         path: '/emoji-action',
@@ -43,9 +42,13 @@ const routes = [
     {
         path: '/direct-message',
         name: 'DirectMessage',
-        component: () => 
-        import('../views/directMessage.vue')
-    }
+        component: () => import('../views/directMessage.vue'),
+    },
+    {
+        path: '/testing',
+        name: 'Testing',
+        component: () => import('../views/deveebHome.vue'),
+    },
 ];
 
 const router = new VueRouter({
