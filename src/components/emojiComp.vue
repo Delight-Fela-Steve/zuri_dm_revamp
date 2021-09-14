@@ -1,26 +1,13 @@
 <template>
   <div class="padThis" id="exampleInputEmoji">
     <div class="setWidth">
-      <b-input-group>
-        <b-form-input
-          class="emojitextinput"
-          type="text"
-          placeholder="Enter Text Here"
-          v-model="valueInput"
-        ></b-form-input>
-        <b-input-group-append is-text @click="clearInput">
-          <i class="fa fa-times moo" aria-hidden="true"></i>
-        </b-input-group-append>
-        <button @click="toogleDialogEmoji">😃</button>
         <VEmojiPicker
           :emojiWithBorder="false"
-          v-show="showDialog"
           :style="{ width: '440px', height: '200' }"
           labelSearch="Search"
-          @select="onSelectEmoji"
-          
+          @select="onSelectEmoji"     
+          v-show="pickEmoji"     
         />
-      </b-input-group>
     </div>
   </div>
 </template>
@@ -42,33 +29,26 @@ import { BootstrapVueIcons, BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 
 <script>
 import { VEmojiPicker } from "v-emoji-picker";
+import { mapGetters } from "vuex";
 
 export default {
   name: "emojiComp",
   components: {
     VEmojiPicker,
   },
+  props: ['onSelectEmoji'],
   data: () => ({
     valueInput: "",
     showDialog: false,
   }),
-  methods: {
-    toogleDialogEmoji() {
-      this.showDialog = !this.showDialog;
-    },
-    onSelectEmoji(emoji) {
-      this.valueInput += emoji.data;
-    },
-    clearInput(){
-      this.valueInput = "";
-    }
+  computed: {
+    ...mapGetters(['pickEmoji']),
   },
 };
 </script>
 
 <style scoped>
 .setWidth {
-  width: 30%;
 }
 
 button {
@@ -84,6 +64,9 @@ input {
 
 .padThis {
   margin: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .input-group-text {

@@ -22,7 +22,7 @@
                 </div>
             </b-col>
             <b-col
-                cols="10"
+                :cols="showReply ? '6' : '10'"
                 class="zurichat-contents-plugin main px-4 position-relative"
             >
                 <header>
@@ -38,6 +38,9 @@
                     <DmPluginContents />
                 </div>
             </b-col>
+            <b-col :cols="showReply ? '4' : ''" v-if="showReply" >
+                <ThreadReplySidebar />
+            </b-col>
         </b-row>
     </div>
 </template>
@@ -48,6 +51,8 @@ import SearchBar from '@/components/searchBar.vue';
 import DmProfileHeader from '@/components/dmProfileHeader.vue';
 import DmPluginContents from '@/components/dmPluginContents.vue';
 import DirectMessage from '@/components/directMessage.vue';
+import ThreadReplySidebar from "@/components/threadReplySidebar.vue";
+import { mapGetters } from "vuex";
 
 export default {
     name: 'Home',
@@ -56,7 +61,11 @@ export default {
         DmProfileHeader,
         DmPluginContents,
         DirectMessage,
+        ThreadReplySidebar,
     },
+    computed: {
+    ...mapGetters(["showReply"]),
+  },
 };
 </script>
 
