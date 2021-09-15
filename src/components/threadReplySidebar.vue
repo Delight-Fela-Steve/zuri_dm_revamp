@@ -109,7 +109,6 @@
         name="checkbox"
         size="sm"
         class="pt-3 px-0"
-        @input="sendReply"
         v-model="replyThread"
       >
         <label for="checkbox" class="pl-3 check-label"
